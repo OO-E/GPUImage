@@ -32,18 +32,6 @@ let package = Package(
                 .copy("Resources/*.png")
             ],
             publicHeadersPath: ".",
-            cSettings: [
-                .define("CLANG_MODULES_AUTOLINK", to: "YES"),
-                .headerSearchPath("."),
-                .headerSearchPath("Base"),
-                .headerSearchPath("Filters"),
-                .headerSearchPath("Movie"),
-                .headerSearchPath("Picture"),
-                .headerSearchPath("Video"),
-                .headerSearchPath("Vendor"),
-                .headerSearchPath("mac"),
-                .headerSearchPath("iOS")
-            ],
             linkerSettings: [
                 .linkedFramework("OpenGLES"),
                 .linkedFramework("CoreMedia"),
@@ -56,6 +44,5 @@ let package = Package(
                 .define("GPUIMAGE_SIMULATOR=0")
             ]
         ),
-    ],
-    swiftLanguageVersions: [.v5]
+    ]
 )
