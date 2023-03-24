@@ -38,6 +38,6 @@ let package = Package(
              //   .define("GPUIMAGE_OPENGLES"),
              //   .define("GPUIMAGE_SIMULATOR=0")
            // ]
-        ),
+        )
     ]
 )
