@@ -1,16 +1,61 @@
-// swift-tools-version:5.7.1
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version:5.3
 
 import PackageDescription
 
-let package = Package(name: "GPUImage",
-                        defaultLocalization: "en",
-                      platforms: [.macOS(.v10_10),
-                                  .iOS(.v11),
-                                  .tvOS(.v9),
-                                  .watchOS(.v2)],
-                      products: [.library(name: "GPUImage",
-                                          targets: ["GPUImage"])],
-                      targets: [.target(name: "GPUImage",
-                                        path: "framework/Source",
-                                        publicHeadersPath: "")])
+let package = Package(
+    name: "GPUImage",
+    platforms: [
+        .iOS(.v5)
+    ],
+    products: [
+        .library(
+            name: "GPUImage",
+            targets: ["GPUImage"]
+        ),
+    ],
+    dependencies: [
+        // no dependencies
+    ],
+    targets: [
+        .target(
+            name: "GPUImage",
+            path: "framework/Source",
+            exclude: [
+                "Mac",
+                "iOS/GPUImageFilterPipeline.*",
+                "iOS/GPUImageMovieComposition.*",
+                "iOS/GPUImageVideoCamera.*",
+                "iOS/GPUImageStillCamera.*",
+                "iOS/GPUImageUIElement.*"
+            ],
+            resources: [
+                .copy("Resources/*.png")
+            ],
+            publicHeadersPath: ".",
+            cSettings: [
+                .define("CLANG_MODULES_AUTOLINK", to: "YES"),
+                .headerSearchPath("."),
+                .headerSearchPath("Base"),
+                .headerSearchPath("Filters"),
+                .headerSearchPath("Movie"),
+                .headerSearchPath("Picture"),
+                .headerSearchPath("Video"),
+                .headerSearchPath("Vendor"),
+                .headerSearchPath("mac"),
+                .headerSearchPath("iOS")
+            ],
+            linkerSettings: [
+                .linkedFramework("OpenGLES"),
+                .linkedFramework("CoreMedia"),
+                .linkedFramework("QuartzCore"),
+                .linkedFramework("AVFoundation")
+            ],
+            swiftSettings: [
+                .define("GPUIMAGE_IOS"),
+                .define("GPUIMAGE_OPENGLES"),
+                .define("GPUIMAGE_SIMULATOR=0")
+            ]
+        ),
+    ],
+    swiftLanguageVersions: [.v5]
+)
