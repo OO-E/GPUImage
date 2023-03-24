@@ -13,4 +13,10 @@ let package = Package(name: "GPUImage",
                                           targets: ["GPUImage"])],
                       targets: [.target(name: "GPUImage",
                                         path: "framework/Source",
-                                        publicHeadersPath: "")])
+                                        publicHeadersPath: "")]
+                      exclude: ["framework/Source/iOS",
+                        "framework/Source/GPUImageFilterPipeline.*",
+                        "framework/Source/GPUImageMovieComposition.*",
+                        "framework/Source/GPUImageVideoCamera.*'",
+                        "framework/Source/GPUImageStillCamera.*",
+                        "framework/Source/GPUImageUIElement.*"])
