@@ -20,15 +20,15 @@ let package = Package(
         .target(
             name: "GPUImage",
             path: "framework/Source",
-            exclude: [
-                "iOS",
-                "Mac",
-                "iOS/GPUImageFilterPipeline.*",
-                "iOS/GPUImageMovieComposition.*",
-                "iOS/GPUImageVideoCamera.*",
-                "iOS/GPUImageStillCamera.*",
-                "iOS/GPUImageUIElement.*"
-            ],
+      //      exclude: [
+       //         "iOS",
+        //        "Mac",
+        //        "iOS/GPUImageFilterPipeline.*",
+        //        "iOS/GPUImageMovieComposition.*",
+        //        "iOS/GPUImageVideoCamera.*",
+        //        "iOS/GPUImageStillCamera.*",
+        //        "iOS/GPUImageUIElement.*"
+         //   ],
             resources: [
                 .copy("Resources/*.png")
             ],
