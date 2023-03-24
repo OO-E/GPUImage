@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "GPUImage",
     platforms: [
-        .iOS(.v5)
+        .iOS(.v12)
     ],
     products: [
         .library(
