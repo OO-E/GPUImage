@@ -29,15 +29,15 @@ let package = Package(
         //        "iOS/GPUImageStillCamera.*",
         //        "iOS/GPUImageUIElement.*"
          //   ],
-            resources: [
-                .copy("Resources/*.png")
-            ],
+           // resources: [
+           //     .copy("Resources/*.png")
+           // ],
             publicHeadersPath: ".",
-            swiftSettings: [
-                .define("GPUIMAGE_IOS"),
-                .define("GPUIMAGE_OPENGLES"),
-                .define("GPUIMAGE_SIMULATOR=0")
-            ]
+           // swiftSettings: [
+            //    .define("GPUIMAGE_IOS"),
+             //   .define("GPUIMAGE_OPENGLES"),
+             //   .define("GPUIMAGE_SIMULATOR=0")
+           // ]
         ),
     ]
 )
