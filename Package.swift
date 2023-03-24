@@ -21,6 +21,7 @@ let package = Package(
             name: "GPUImage",
             path: "framework/Source",
             exclude: [
+                "iOS"
                 "Mac",
                 "iOS/GPUImageFilterPipeline.*",
                 "iOS/GPUImageMovieComposition.*",
