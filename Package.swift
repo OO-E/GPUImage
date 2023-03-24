@@ -4,6 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "GPUImage",
+    defaultLocalization: "en",
     platforms: [
         .iOS(.v12)
     ],
