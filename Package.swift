@@ -32,12 +32,6 @@ let package = Package(
                 .copy("Resources/*.png")
             ],
             publicHeadersPath: ".",
-            linkerSettings: [
-                .linkedFramework("OpenGLES"),
-                .linkedFramework("CoreMedia"),
-                .linkedFramework("QuartzCore"),
-                .linkedFramework("AVFoundation")
-            ],
             swiftSettings: [
                 .define("GPUIMAGE_IOS"),
                 .define("GPUIMAGE_OPENGLES"),
