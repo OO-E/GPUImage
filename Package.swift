@@ -19,7 +19,7 @@ let package = Package(
     targets: [
         .target(
             name: "GPUImage",
-            path: "framework/Source",
+            path: "framework/Source"
       //      exclude: [
        //         "iOS",
         //        "Mac",
@@ -32,7 +32,7 @@ let package = Package(
            // resources: [
            //     .copy("Resources/*.png")
            // ],
-            publicHeadersPath: ".",
+//            publicHeadersPath: "."
            // swiftSettings: [
             //    .define("GPUIMAGE_IOS"),
              //   .define("GPUIMAGE_OPENGLES"),
